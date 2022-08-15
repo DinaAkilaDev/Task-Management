@@ -19,8 +19,9 @@ class UserSeeder extends Seeder
         $user=new User();
         $user->name='admin';
         $user->email='admin@admin.com';
-        $user->password=123456;
+        $user->password=bcrypt(123456);
         $user->photo='https://cdn-icons-png.flaticon.com/512/219/219983.png';
+        $user->save();
 
     }
 }
