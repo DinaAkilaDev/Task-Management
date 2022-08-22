@@ -16,12 +16,11 @@ return new class extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
             $table->integer('mobile');
-            $table->string('password');
             $table->string('job_name');
             $table->enum('role',['team_leader','member']);
-            $table->string('photo');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

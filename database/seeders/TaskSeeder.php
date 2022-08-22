@@ -22,6 +22,7 @@ class TaskSeeder extends Seeder
         $task->status='progress';
         $task->duration=5;
         $task->project_id=1;
+        $task->employee_id=2;
         $task->save();
 
 
@@ -31,6 +32,7 @@ class TaskSeeder extends Seeder
         $task1->status='progress';
         $task1->duration=5;
         $task1->project_id=1;
+        $task1->employee_id=3;
         $task1->save();
     }
 }
