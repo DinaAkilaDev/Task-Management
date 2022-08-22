@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('job_name');
             $table->enum('role',['team_leader','member']);
+            $table->string('photo');
             $table->timestamps();
         });
     }

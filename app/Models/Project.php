@@ -11,4 +11,7 @@ class Project extends Model
     public function Tasks(){
         return $this->hasMany(Task::class,'project_id','id');
     }
+    public function Employee(){
+        return $this->hasMany(Employee::class,'employee_id','id');
+    }
 }
