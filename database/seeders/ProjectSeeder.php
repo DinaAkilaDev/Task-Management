@@ -20,8 +20,19 @@ class ProjectSeeder extends Seeder
         $project=new Project();
         $project->title='React & Laravel';
         $project->description='Website designing and development using react.js and LARAVEL , video player, user login, playlist creation for videos, etc ..';
+        $project->status='progress';
         $project->team_leader_id=1;
         $project->save();
+
+
+        $project2=new Project();
+        $project2->title='Car Seller';
+        $project2->description='In publishing and graphic design,
+                            Lorem ipsum is a placeholder text
+                            commonly used to demonstrate';
+        $project2->status='completed';
+        $project2->team_leader_id=1;
+        $project2->save();
 
         $employeeProject=new EmployeeProject();
         $employeeProject->project_id=1;

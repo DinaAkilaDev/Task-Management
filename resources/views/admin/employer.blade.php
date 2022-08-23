@@ -10,64 +10,26 @@
     </div>
 
     <table class="table table-hover table-striped table-bordered">
-        <tr class="table-dark py-3">
+        <tr class="table-dark py-3 text-center">
             <td>Name</td>
             <td>Email</td>
             <td>Role</td>
             <td>Report</td>
             <td>Action</td>
         </tr>
+        @foreach($employers as $employer)
+        <tr class="text-center">
+            <td>{{$employer->name}}</td>
+            <td>{{$employer->User->email}}</td>
+            <td><button class="leader" style="background:{{ $employer->role=='team_leader' ?   'gold' : '#0dcaf0' }}" >{{$employer->role}}</button></td>
+            <td><button class="bg-info text-white">Show Report</button></td>
+            <td>
+                <a href="admin-Edit-Employer.html" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+            </td>
+        </tr>
+        @endforeach
 
-        <tr class="text-center">
-            <td>hamza zoheir</td>
-            <td>hamza@gmail.com</td>
-            <td><button class="leader">Team leader</button></td>
-            <td><button class="bg-info text-white">Show Report</button></td>
-            <td>
-                <a href="admin-Edit-Employer.html" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
-            </td>
-        </tr>
-        <tr class="text-center">
-            <td> Ahmed saleh</td>
-            <td>Ahmed@gmail.com</td>
-            <td><button class="Member">Member</button></td>
-            <td><button class="bg-info text-white">Show Report</button></td>
-            <td>
-                <a href="admin-Edit-Employer.html" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
-            </td>
-        </tr>
-        <tr class="text-center">
-            <td>hamza zoheir</td>
-            <td>hamza@gmail.com</td>
-            <td ><button class="leader">Team leader</button></td>
-            <td><button class="bg-info text-white">Show Report</button></td>
-            <td>
-                <a href="admin-Edit-Employer.html" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
-            </td>
-        </tr>
-        <tr class="text-center">
-            <td> Ahmed saleh</td>
-            <td>Ahmed@gmail.com</td>
-            <td><button class="Member">Member</button></td>
-            <td><button class="bg-info text-white">Show Report</button></td>
-            <td>
-                <a href="admin-Edit-Employer.html" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
-            </td>
-        </tr>
-        <tr class="text-center">
-            <td>hamza zoheir</td>
-            <td>hamza@gmail.com</td>
-            <td ><button class="leader">Team leader</button></td>
-            <td><button class="bg-info text-white">Show Report</button></td>
-            <td>
-                <a href="admin-Edit-Employer.html" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
-            </td>
-        </tr>
     </table>
 </div>
     </main>

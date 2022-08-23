@@ -20,67 +20,21 @@
                     <td>Minutes</td>
                     <td>Action</td>
                 </tr>
+                @foreach($tasks as $task)
+                <tr class="text-center">
+                    <td>{{$task->title}}</td>
+                    <td>{{$task->description}} </td>
+                    <td>{{$task->Project->title}}</td>
+                    <td><button class=" text-white {{ $task->status=='progress' ?   'bg-primary' : ($task->status=='canceled' ? 'bg-danger' : 'bg-success') }}" >{{$task->status}}</button></td>
+                    <td><button class="tasks">{{$task->Employee->name}}</button></td>
+                    <td><button class="bg-info text-dark">{{$task->duration}}</button></td>
+                    <td>
+                        <a href="" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                        <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+                @endforeach
 
-                <tr class="text-center">
-                    <td>hamza zoheir</td>
-                    <td>design home pages </td>
-                    <td>Car Seller</td>
-                    <td><button class="bg-success text-white">Completed</button></td>
-                    <td><button class="tasks">hamza</button></td>
-                    <td><button class="bg-info text-dark">50</button></td>
-                    <td>
-                        <a href="" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                        <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
-                    </td>
-                </tr>
-                <tr class="text-center">
-                    <td> Ahmed saleh</td>
-                    <td>design home pages </td>
-                    <td>Car Seller</td>
-                    <td><button class="bg-danger text-white">Completed</button></td>
-                    <td><button class="tasks">hamza</button></td>
-                    <td><button class="bg-info text-dark">60</button></td>
-                    <td>
-                        <a href="" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                        <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
-                    </td>
-                </tr>
-                <tr class="text-center">
-                    <td>hamza zoheir</td>
-                    <td>design home pages </td>
-                    <td>Car Seller</td>
-                    <td><button class="bg-warning text-dark">Completed</button></td>
-                    <td><button class="tasks">hamza</button></td>
-                    <td><button class="bg-info text-dark">95</button></td>
-                    <td>
-                        <a href="" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                        <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
-                    </td>
-                </tr>
-                <tr class="text-center">
-                    <td> Ahmed saleh</td>
-                    <td>design home pages </td>
-                    <td>Car Seller</td>
-                    <td><button class="bg-success text-white">Completed</button></td>
-                    <td><button class="tasks">hamza</button></td>
-                    <td><button class="bg-info text-dark">70</button></td>
-                    <td>
-                        <a href="" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                        <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
-                    </td>
-                </tr>
-                <tr class="text-center">
-                    <td>hamza zoheir</td>
-                    <td>design home pages </td>
-                    <td>Car Seller</td>
-                    <td><button class="bg-warning text-dark" style="border: none;">Completed</button></td>
-                    <td><button class="tasks">hamza</button></td>
-                    <td><button class="bg-info text-dark">90</button></td>
-                    <td>
-                        <a href="" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                        <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
-                    </td>
-                </tr>
             </table>
         </div>
 

@@ -17,57 +17,18 @@
             <td>Team Leader</td>
             <td>Action</td>
         </tr>
-
+        @foreach($projects as $project)
         <tr class="text-center">
-            <td>hamza zoheir</td>
-            <td>hamza@gmail.com</td>
+            <td>{{$project->title}}</td>
+            <td>{{$project->description}}</td>
             <td><button class="tasks">Show Tasks</button></td>
-            <td><button class="t-leader">hamza</button></td>
+            <td><button class="t-leader">{{$project->Teamleader->name}}</button></td>
             <td>
                 <a href="Edit-Project.html" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
                 <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
             </td>
         </tr>
-        <tr class="text-center">
-            <td> Ahmed saleh</td>
-            <td>Ahmed@gmail.com</td>
-            <td><button class="tasks">Show Tasks</button></td>
-            <td><button class="t-leader">Ahmed</button></td>
-            <td>
-                <a href="Edit-Project.html" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
-            </td>
-        </tr>
-        <tr class="text-center">
-            <td>hamza zoheir</td>
-            <td>hamza@gmail.com</td>
-            <td ><button class="tasks">Show Tasks</button></td>
-            <td><button class="t-leader">hamza</button></td>
-            <td>
-                <a href="Edit-Project.html" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
-            </td>
-        </tr>
-        <tr class="text-center">
-            <td> Ahmed saleh</td>
-            <td>Ahmed@gmail.com</td>
-            <td><button class="tasks">Show Tasks</button></td>
-            <td><button class="t-leader">Ahmed</button></td>
-            <td>
-                <a href="Edit-Project.html" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
-            </td>
-        </tr>
-        <tr class="text-center">
-            <td>hamza zoheir</td>
-            <td>hamza@gmail.com</td>
-            <td ><button class="tasks">Show Tasks</button></td>
-            <td><button class="t-leader">hamza</button></td>
-            <td>
-                <a href="Edit-Project.html" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
-            </td>
-        </tr>
+        @endforeach
     </table>
 </div>
     </main>
