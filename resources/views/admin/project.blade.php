@@ -24,8 +24,8 @@
             <td><button class="tasks">Show Tasks</button></td>
             <td><button class="t-leader">{{$project->Teamleader->name}}</button></td>
             <td>
-                <a href="Edit-Project.html" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                <a href="/admin/edit-project/{{$project->id}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                <a href="/admin/delete-project/{{$project->id}}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
             </td>
         </tr>
         @endforeach

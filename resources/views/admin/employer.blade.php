@@ -24,8 +24,8 @@
             <td><button class="leader" style="background:{{ $employer->role=='team_leader' ?   'gold' : '#0dcaf0' }}" >{{$employer->role}}</button></td>
             <td><button class="bg-info text-white">Show Report</button></td>
             <td>
-                <a href="admin-Edit-Employer.html" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                <a href="/admin/edit-employer/{{$employer->id}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                <a href="/admin/delete-employer/{{$employer->id}}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
             </td>
         </tr>
         @endforeach

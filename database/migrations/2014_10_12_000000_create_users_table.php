@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('photo');
             $table->enum('type',['admin','employee']);
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });

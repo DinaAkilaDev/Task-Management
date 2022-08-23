@@ -21,6 +21,7 @@ return new class extends Migration
             $table->enum('role',['team_leader','member']);
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
