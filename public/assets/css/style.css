@@ -1,0 +1,106 @@
+.hero {
+    background: url(../images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 10%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.hero form {
+    position: relative;
+    margin-bottom: 30px;
+}
+.hero form input {
+    padding-right: 50px
+}
+.hero form button {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    border: 0;
+    background: transparent;
+    color: #555;
+}
+.container table tr td{
+    padding: 30px;
+
+}
+.container table tr td button.leader{
+    background: green;
+    color: white;
+    border: none;
+    border-radius:4px ;
+
+}
+.container table tr td button.Member{
+    background: rgb(106, 194, 202);
+    color: white;
+    border: none;
+    border-radius:4px ;
+    padding: 0 18px;
+}
+.container table tr td button.tasks{
+    background: rgb(106, 194, 202);
+    color: white;
+    border: none;
+    border-radius:4px ;
+    padding: 0 18px;
+}
+.container table tr td button.t-leader{
+    background: rgb(106, 202, 160);
+    color: white;
+    border: none;
+    border-radius:4px ;
+    padding: 0 18px;
+}
+.container table tr td button{
+    border: 0;
+    border-radius: 4px;
+    padding: 3px 15px;
+}
+
+.menu-btn{
+    border: 0;
+    cursor: pointer;
+    border-radius: 3px;
+    color: #fff;
+}
+.menu.show {
+    height: 15vh;
+}
+
+.meno_table{
+    position: fixed;
+    background: rgb(0, 0, 0,0.3);
+    top: 10%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    transition: all .4s ease;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+}
+.meno_table.Repo{
+    visibility: visible;
+    opacity: 1;
+}
+.meno_table .content{
+    width: 40%;
+    background: #fff;
+    margin: 0% auto 0;
+    padding: 20px;
+    transition: all .5s ease;
+
+}
+
+.sho{
+    background: rgb(69, 175, 145);
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 4px;
+}

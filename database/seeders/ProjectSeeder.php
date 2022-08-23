@@ -18,7 +18,7 @@ class ProjectSeeder extends Seeder
     {
         //`id`, `title`, `description`, `team_leader`, `created_at`, `updated_at`
         $project=new Project();
-        $project->title='Website designing and development using react.js and LARAVEL';
+        $project->title='React & Laravel';
         $project->description='Website designing and development using react.js and LARAVEL , video player, user login, playlist creation for videos, etc ..';
         $project->team_leader_id=1;
         $project->save();
