@@ -7,9 +7,24 @@ use App\Models\Project;
 use App\Models\Task;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
+    function storeImage($folder, $file_name, $is_file = null)
+    {
+        if ($is_file) {
+            $file = $file_name;
+        } else {
+            if (!request()->hasFile($file_name)) return null;
+
+            $file = request()->file($file_name);
+        }
+        return Storage::disk('public')->put($folder, $file);
+    }
+
     public function index()
     {
         $projects=Project::all();
@@ -44,8 +59,8 @@ class AdminController extends Controller
         $user = new User();
         $user->name = request('name');
         $user->email = request('email');
-        $user->password = request('password');
-        $user->photo = storeImage('users','photo' );
+        $user->password = Hash::make(request('password'));
+        $user->photo = $this->storeImage('users','photo' );
         $user->type = 'employee';
         $user->save();
 
@@ -54,7 +69,7 @@ class AdminController extends Controller
         $employer->mobile = request('mobile');
         $employer->job_name = request('job_name');
         $employer->role = request('role');
-        $employer->user_id = request('user_id');
+        $employer->user_id = $user->id;
         $employer->save();
         return back()->with('success','Added Successfully!');
 
@@ -73,25 +88,44 @@ class AdminController extends Controller
         return view('admin.editEmployer')->with(compact('employee'));
     }
 
+    public function profile()
+    {
+        return view('admin.editProfile');
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $id = request('id');
+        $user = User::findOrFail($id);
+        $user->name = request('name');
+        $user->email  = request('email');
+        $user->password  = Hash::make(request('password'));
+        $user->photo = $this->storeImage('users','photo' );
+        $user->type = Auth::user()->type == 'admin'? 'admin': 'employee';
+        $user->save();
+        return back()->with('success', 'Updated Successfully!');
+    }
+
 
     public function updateEmployer(Request $request)
     {
         $id = request('id');
         $employer = Employee::withTrashed()->findOrFail($id);
-        $employer->name = request('name');
-        $employer->mobile = request('mobile');
-        $employer->job_name = request('job_name');
-        $employer->role = request('role');
-        $employer->user_id = request('user_id');
-        $employer->save();
 
         $user = User::withTrashed()->findOrFail($employer->user_id);
         $user->name = request('name');
         $user->email = request('email');
         $user->password = request('password');
-        $user->photo = storeImage('users','photo' );
+        $user->photo = $this->storeImage('users','photo' );
         $user->type = 'employee';
         $user->save();
+
+        $employer->name = request('name');
+        $employer->mobile = request('mobile');
+        $employer->job_name = request('job_name');
+        $employer->role = request('role');
+        $employer->user_id = $user->id;
+        $employer->save();
 
 
         return back()->with('success', 'Updated Successfully!');

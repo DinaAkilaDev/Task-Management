@@ -41,7 +41,7 @@
                             {{ Auth::user()->name }}
                         </button>
                         <ul class="menu dropdown-menu">
-                            <li><a class="dropdown-item" href="Edit-Profile.html">Setting</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/admin/profile') }}">Setting</a></li>
                             <li>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
@@ -56,7 +56,7 @@
                         </ul>
 
                 </div>
-                <img src="https://placekitten.com/40/40" alt="" style="width: 40px ; height: 40px; margin-right: 15px;">
+                <img src="{{'/storage/'. Auth::user()->photo}}" alt="" style="width: 40px ; height: 40px; margin-right: 15px;">
                 @endguest
             </div>
         </nav>
@@ -121,6 +121,6 @@
     </main>
 
 </div>
-    @include('layouts.js')
+{{--    @include('layouts.js')--}}
 </body>
 </html>

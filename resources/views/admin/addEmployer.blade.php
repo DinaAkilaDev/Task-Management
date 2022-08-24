@@ -8,6 +8,11 @@
 
             <form role="form" action="{{route('employerStore')}}" enctype="multipart/form-data" method="Post">
                 @csrf
+                @if(session()->has('success'))
+                    <div class="alert alert-success">
+                        {{ session()->get('success') }}
+                    </div>
+                @endif
                 <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                         <label class="mb-2">Name</label><br>

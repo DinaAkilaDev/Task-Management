@@ -17,7 +17,7 @@
                     <div class="mx-4 mb-4 ">
 
                         <div class="d-flex " >
-                            <img src="https://placekitten.com/40/40" alt="" style="border-radius: 50%;">
+                            <img  width="50" height="50"  src="{{'/storage/'. $project->Teamleader->User->photo}}" alt="" style="border-radius: 50%;">
                         <div class="mt-2 m-lg-1" >{{$project->Teamleader->name}}</div>
 
                         </div>

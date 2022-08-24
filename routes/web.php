@@ -40,6 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/task', [AdminController::class, 'task']);
 
     Route::get('/admin/profile', [AdminController::class, 'profile'])->name('adminProfile');
+    Route::post('/admin/edit-profile', [AdminController::class, 'updateProfile'])->name('profileUpdate');
 });
 
 
