@@ -15,7 +15,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{url('/teamleader/project')}}l" style="color: white;">
+                <a class="nav-link" href="{{url('/teamleader/project')}}" style="color: white;">
                     <span data-feather="shopping-cart"></span>
                     Project
                 </a>
@@ -25,6 +25,13 @@
                 <a class="nav-link" href="{{url('/teamleader/task')}}" style="color: white;">
                     <span data-feather="shopping-cart"></span>
                     Tasks
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('/teamleader/show-employer_report')}}" style="color: white;">
+                    <span data-feather="shopping-cart"></span>
+                    Report
                 </a>
             </li>
 

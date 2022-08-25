@@ -35,8 +35,8 @@ class HomeController extends Controller
 //                $projects=Project::where('team_leader_id',Auth::user()->Employee->Projectleader->id);
                 return view('member.dashboard');
             }else{
-//                $projects=Project::where('team_leader_id',Auth::user()->Employee->Projectleader->id);
-                return view('teamleader.dashboard');
+                $projects=Project::where('team_leader_id',Auth::user()->Employee->id)->get();
+                return view('teamleader.dashboard',compact('projects'));
             }
 
         }
