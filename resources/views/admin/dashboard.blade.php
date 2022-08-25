@@ -10,7 +10,7 @@
             <div class="card d-flex" style="border:1px solid {{ $project->status=='progress' ?   'orange' : ($project->status=='canceled' ? 'red' : 'green') }}" >
                 <div class="card-body">
                     <div style="padding: 20px;">
-                        <h5 class="mb-3">{{$project->title}} <span class="m-lg-3" style="color:{{ $project->status=='progress' ?   'orange' : ($project->status=='canceled' ? 'red' : 'green') }}" >{{$project->status}}</span></h5>
+                        <h4 class="mb-3">{{$project->title}} <span class="m-lg-3" style="color:{{ $project->status=='progress' ?   'orange' : ($project->status=='canceled' ? 'red' : 'green') }}" >{{$project->status}}</span></h4>
                         <p class="text-secondary mb-4">{{$project->description}}
                         </p>
                     </div>

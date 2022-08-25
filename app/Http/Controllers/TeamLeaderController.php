@@ -11,7 +11,7 @@ class TeamLeaderController extends Controller
 {
     public function index()
     {
-        $projects=Project::where('team_leader_id',Auth::user()->Employee->id);
+        $projects=Project::where('team_leader_id',Auth::user()->Employee->id)->get();
         return view('teamleader.dashboard',compact('projects'));
     }
 
