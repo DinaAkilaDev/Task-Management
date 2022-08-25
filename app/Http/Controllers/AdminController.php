@@ -31,10 +31,26 @@ class AdminController extends Controller
         return view('home',compact('projects'));
     }
 
+
     public function employer()
     {
         $employers=Employee::all();
         return view('admin.employer',compact('employers'));
+    }
+
+    public function reportEmployer($id)
+    {
+        $employers=Employee::findOrFail($id);
+        $projects=Project::where('team_leader_id' ,$id)->get();
+        $completed_projects=Project::where('team_leader_id' ,$id)->where('status','completed')->get();
+        $canceled_projects=Project::where('team_leader_id' ,$id)->where('status','canceled')->get();
+        $progress_projects=Project::where('team_leader_id' ,$id)->where('status','progress')->get();
+        $tasks=Task::where('employee_id' ,$id)->get();
+        $completed_tasks=Task::where('employee_id' ,$id)->where('status','completed')->get();
+        $canceled_tasks=Task::where('employee_id' ,$id)->where('status','canceled')->get();
+        $progress_tasks=Task::where('employee_id' ,$id)->where('status','progress')->get();
+        return view('admin.showReport',compact('employers','projects','tasks'
+            ,'completed_projects','canceled_projects','progress_projects','completed_tasks','canceled_tasks','progress_tasks'));
     }
 
     public function project()

@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/delete-employer/{id}', [AdminController::class, 'destroyEmployer']);
     Route::get('/admin/edit-employer/{id}', [AdminController::class, 'editEmployer']);
     Route::post('/admin/edit-employer', [AdminController::class, 'updateEmployer'])->name('employerUpdate');
+    Route::get('/admin/show-employer_report/{id}', [AdminController::class, 'reportEmployer']);
 
     Route::get('/admin/project', [AdminController::class, 'project']);
     Route::get('/admin/add-project', [AdminController::class, 'createProject'])->name('projectCreate');

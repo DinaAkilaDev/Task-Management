@@ -1,3 +1,10 @@
+
+@extends('teamleader.app')
+
+@section('content')
+    <main class="d-flex" style="background: #eee;">
+        @include('teamleader.sidebar')
+
 <div class="container">
     <div class="d-flex justify-content-between">
         <h2 class="mb-4 mt-3">Dashboard</h2>
@@ -49,3 +56,5 @@
 
     </div>
 </div>
+    </main>
+@endsection
