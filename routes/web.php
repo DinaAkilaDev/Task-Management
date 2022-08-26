@@ -48,8 +48,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/teamleader/dashboard', [TeamLeaderController::class, 'index']);
 
     Route::get('/teamleader/employer', [TeamLeaderController::class, 'employer']);
-//    Route::get('/teamleader/add-employer', [AdminController::class, 'createEmployer'])->name('employerCreate');
-//    Route::post('/teamleader/add-employer', [AdminController::class, 'storeEmployer'])->name('employerStore');
+
+    Route::get('/teamleader/add-task', [TeamLeaderController::class, 'createTask']);
+    Route::post('/teamleader/add-task', [TeamLeaderController::class, 'storeTask'])->name('taskStore');
+
 //    Route::get('/teamleader/delete-employer/{id}', [AdminController::class, 'destroyEmployer']);
 //    Route::get('/teamleader/edit-employer/{id}', [AdminController::class, 'editEmployer']);
 //    Route::post('/teamleader/edit-employer', [AdminController::class, 'updateEmployer'])->name('employerUpdate');
@@ -58,14 +60,20 @@ Route::group(['middleware' => 'auth'], function () {
      Route::get('/teamleader/project', [TeamLeaderController::class, 'project']);
 //    Route::get('/teamleader/add-project', [AdminController::class, 'createProject'])->name('projectCreate');
 //    Route::post('/teamleader/add-project', [AdminController::class, 'storeProject'])->name('projectStore');
-//    Route::get('/teamleader/delete-project/{id}', [AdminController::class, 'destroyProject']);
-//    Route::get('/teamleader/edit-project/{id}', [AdminController::class, 'editProject']);
-//    Route::post('/teamleader/edit-project', [AdminController::class, 'updateProject'])->name('projectUpdate');
-//
+    Route::get('/teamleader/delete-project/{id}', [TeamLeaderController::class, 'destroyProject']);
+
+    Route::get('/teamleader/edit-project/{id}', [TeamLeaderController::class, 'editProject']);
+    Route::post('/teamleader/edit-project', [TeamLeaderController::class, 'updateProject'])->name('leaderprojectUpdate');
+
+
+    Route::get('/teamleader/edit-task/{id}', [TeamLeaderController::class, 'editTask']);
+    Route::post('/teamleader/edit-task', [TeamLeaderController::class, 'updateTask'])->name('taskUpdate');
+    Route::get('/teamleader/delete-task/{id}', [TeamLeaderController::class, 'destroyTask']);
+
     Route::get('/teamleader/task', [TeamLeaderController::class, 'task']);
-//
-//    Route::get('/teamleader/profile', [AdminController::class, 'profile'])->name('adminProfile');
-//    Route::post('/teamleader/edit-profile', [AdminController::class, 'updateProfile'])->name('profileUpdate');
+
+    Route::get('/teamleader/profile', [TeamLeaderController::class, 'profile'])->name('teamleaderProfile');
+    Route::post('/teamleader/edit-profile', [TeamLeaderController::class, 'updateProfile'])->name('teamleaderUpdate');
 });
 
 

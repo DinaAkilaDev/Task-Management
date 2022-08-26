@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="mx-4 mb-4 ">
 
-                                    <button class="btn btn btn-outline-success ">Add Tasks +</button>
+                                    <a href="{{url('/teamleader/add-task')}}"  class="btn btn btn-outline-success ">Add Tasks +</a>
 
 
                                 </div>

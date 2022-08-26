@@ -6,7 +6,7 @@
 <div class="container">
     <div class="d-flex justify-content-between mb-5">
         <h2 class="mt-3">Tasks</h2>
-        <button class="mt-3 btn btn-info mx-4"><a href="Add-tasks.html" class="text-white text-decoration-none">Add Tasks</a></button>
+        <button class="mt-3 btn btn-info mx-4"><a href="{{url('/teamleader/add-task')}}" class="text-white text-decoration-none">Add Tasks</a></button>
     </div>
 
     <table class="table table-hover table-striped table-bordered">
@@ -28,7 +28,12 @@
                 <td><button class=" text-white {{ $task->status=='progress' ?   'bg-primary' : ($task->status=='canceled' ? 'bg-danger' : 'bg-success') }}" >{{$task->status}}</button></td>
                 <td><button class="tasks">{{$task->Employee->name}}</button></td>
                 <td><button class="bg-info text-dark">{{$task->duration}}</button></td>
-
+                <td>
+                    <a href="/teamleader/edit-task/{{$task->id}}" class="btn btn-primary btn-sm"><i
+                            class="fas fa-edit"></i></a>
+                    <a href="/teamleader/delete-task/{{$task->id}}" class="btn btn-danger btn-sm"><i
+                            class="fas fa-trash"></i></a>
+                </td>
             </tr>
         @endforeach
     </table>
