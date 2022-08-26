@@ -2,7 +2,7 @@
     <div class="position-sticky pt-3" style="height: 580px;">
         <ul class="nav flex-column">
             <li class="nav-item ">
-                <a class="nav-link " aria-current="page" href="{{url('/member/dasboard')}}" style="color: white;">
+                <a class="nav-link " aria-current="page" href="{{url('/member/dashboard')}}" style="color: white;">
                     <span data-feather="home"></span>
                     Dashboard
                 </a>

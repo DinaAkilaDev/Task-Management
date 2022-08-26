@@ -28,7 +28,10 @@ class TeamLeaderController extends Controller
 
     public function employer()
     {
-        $employers = Employee::all();
+        $employers = Employee::where('role', 'member')->get();
+//        $id = Auth::user()->Employee->id;
+//        $projects = Project::where('team_leader_id', $id)->get();
+//        dd($projects);
         return view('teamleader.employer', compact('employers'));
     }
 
@@ -36,6 +39,14 @@ class TeamLeaderController extends Controller
     {
         $tasks = Task::where('employee_id', Auth::user()->Employee->id)->get();
         return view('teamleader.task', compact('tasks'));
+    }
+
+    public function destroyEmployer($id)
+    {
+        $employer=Employee::findOrFail($id);
+        User::findOrFail($employer->user_id)->delete();
+        $employer->delete();
+        return back()->with('success','Deleted Successfully!');
     }
 
     public function reportEmployer()

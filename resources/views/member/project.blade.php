@@ -1,3 +1,9 @@
+
+@extends('member.app')
+
+@section('content')
+    <main class="d-flex" style="background: #eee;">
+        @include('member.sidebar')
 <div class="container">
     <div class="d-flex justify-content-between mb-5">
         <h2 class="mt-3">Project</h2>
@@ -39,3 +45,5 @@
         </tr>
     </table>
 </div>
+    </main>
+@endsection

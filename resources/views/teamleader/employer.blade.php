@@ -6,9 +6,9 @@
         <div class="container">
             <div class="d-flex justify-content-between mb-5">
                 <h2 class="mt-3">Employer</h2>
-                <button class="mt-3 btn btn-info mx-4"><a href="{{route('employerCreate')}}"
-                                                          class="text-white text-decoration-none">Add Employer</a>
-                </button>
+{{--                <button class="mt-3 btn btn-info mx-4"><a href="{{route('employerCreate')}}"--}}
+{{--                                                          class="text-white text-decoration-none">Add Employer</a>--}}
+{{--                </button>--}}
             </div>
 
             <table class="table table-hover table-striped table-bordered">
@@ -31,7 +31,7 @@
                         </td>
                         <td>
                             {{--                            <button type="button" onclick="openModal()" class="bg-info text-white">Show Report</button>--}}
-                            <a href="/admin/show-employer_report/{{$employer->id}}" style="color: black" class=" text-decoration-none">Show Report</a>
+                            <a href="/teamleader/show-employer_report/{{$employer->id}}" style="color: black" class=" text-decoration-none">Show Report</a>
                             {{--                            <div id="modal" class="content " style="display: none; position: absolute; background-color: white; padding: 39px;">--}}
                             {{--                                <div class="d-flex">--}}
                             {{--                                    <h4>Report For {{$employer->name}}</h4>--}}
@@ -88,9 +88,9 @@
 
                         </td>
                         <td>
-                            <a href="/admin/edit-employer/{{$employer->id}}" class="btn btn-primary btn-sm"><i
-                                    class="fas fa-edit"></i></a>
-                            <a href="/admin/delete-employer/{{$employer->id}}" class="btn btn-danger btn-sm"><i
+{{--                            <a href="/admin/edit-employer/{{$employer->id}}" class="btn btn-primary btn-sm"><i--}}
+{{--                                    class="fas fa-edit"></i></a>--}}
+                            <a href="/teamleader/delete-employer/{{$employer->id}}" class="btn btn-danger btn-sm"><i
                                     class="fas fa-trash"></i></a>
                         </td>
                     </tr>

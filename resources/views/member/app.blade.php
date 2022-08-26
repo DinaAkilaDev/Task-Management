@@ -41,7 +41,7 @@
                             {{ Auth::user()->name }}
                         </button>
                         <ul class="menu dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url('/admin/profile') }}">Setting</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/member/profile') }}">Setting</a></li>
                             <li>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();

@@ -1,9 +1,9 @@
 
-@extends('teamleader.app')
+@extends('member.app')
 
 @section('content')
     <main class="d-flex" style="background: #eee;">
-        @include('teamleader.sidebar')
+        @include('member.sidebar')
 
 
 <div class="container">
