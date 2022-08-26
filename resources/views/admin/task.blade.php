@@ -2,7 +2,7 @@
 
 @section('content')
     <main class="d-flex" style="background: #eee;">
-    @include('admin.sidebar')
+        @include('admin.sidebar')
 
         <div class="container">
             <div class="d-flex justify-content-between mb-5">
@@ -19,15 +19,22 @@
                     <td>Minutes</td>
                 </tr>
                 @foreach($tasks as $task)
-                <tr class="text-center">
-                    <td>{{$task->title}}</td>
-                    <td>{{$task->description}} </td>
-                    <td>{{$task->Project->title}}</td>
-                    <td><button class=" text-white {{ $task->status=='progress' ?   'bg-primary' : ($task->status=='canceled' ? 'bg-danger' : 'bg-success') }}" >{{$task->status}}</button></td>
-                    <td><button class="tasks">{{$task->Employee->name}}</button></td>
-                    <td><button class="bg-info text-dark">{{$task->duration}}</button></td>
+                    <tr class="text-center">
+                        <td>{{$task->title}}</td>
+                        <td>{{$task->description}} </td>
+                        <td>{{$task->Project->title}}</td>
+                        <td>
+                            <button
+                                class=" text-white {{ $task->status=='progress' ?   'bg-primary' : ($task->status=='canceled' ? 'bg-danger' : 'bg-success') }}">{{$task->status}}</button>
+                        </td>
+                        <td>
+                            <button class="tasks">{{$task->Employee->name}}</button>
+                        </td>
+                        <td>
+                            <button class="bg-info text-dark">{{$task->duration}}</button>
+                        </td>
 
-                </tr>
+                    </tr>
                 @endforeach
 
             </table>

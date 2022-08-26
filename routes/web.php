@@ -78,7 +78,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/member/edit-task/{id}', [MemberController::class, 'editTask']);
     Route::post('/member/edit-task', [MemberController::class, 'updateTask'])->name('membertaskUpdate');
     Route::get('/member/delete-task/{id}', [MemberController::class, 'destroyTask']);
-
+    Route::get('/teamleader/show-related_task/{id}', [MemberController::class, 'relatedTask']);
 
     Route::get('/member/profile', [MemberController::class, 'profile'])->name('memberProfile');
     Route::post('/member/edit-profile', [MemberController::class, 'updateProfile'])->name('memberUpdate');

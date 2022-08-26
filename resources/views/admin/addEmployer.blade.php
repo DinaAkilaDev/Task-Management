@@ -52,7 +52,7 @@
                         <input type="file" data-loading-text="Loading..."
                                name="photo" id="file"
                                class=" img-logo demo-loading-btn btn  margin-top-85"
-                               >
+                        >
                     </div>
                     <div>
                         <button type="submit" class="btn btn-info w-25 mt-5">save</button>

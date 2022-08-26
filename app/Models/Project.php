@@ -19,4 +19,8 @@ class Project extends Model
     public function Teamleader(){
         return $this->belongsTo(Employee::class,'team_leader_id','id');
     }
+    public function EmployeeProject()
+    {
+        return $this->belongsToMany(Employee::class, 'employee_projects', 'employee_id', 'project_id');
+    }
 }

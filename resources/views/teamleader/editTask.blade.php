@@ -16,13 +16,15 @@
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label class="mb-2">Title</label><br>
-                            <input type="text" value="{{$task->title}}" name="title" class="name mb-5" placeholder="Enter Tittle"
+                            <input type="text" value="{{$task->title}}" name="title" class="name mb-5"
+                                   placeholder="Enter Tittle"
                                    style="width:90%; padding: 10px;">
-                            <input type="hidden" value="{{$task->id}}" name="id" >
+                            <input type="hidden" value="{{$task->id}}" name="id">
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label class="mb-2">Duration In Minutes</label><br>
-                            <input type="number" value="{{$task->duration}}" name="duration" class="Email mb-5" placeholder="enter time"
+                            <input type="number" value="{{$task->duration}}" name="duration" class="Email mb-5"
+                                   placeholder="enter time"
                                    style="width:90% ;padding: 10px;">
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">

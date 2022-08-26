@@ -10,4 +10,7 @@ class EmployeeProject extends Model
 {
     use HasFactory;
     use SoftDeletes;
+    public function Project(){
+        return $this->belongsTo(Project::class,'project_id');
+    }
 }

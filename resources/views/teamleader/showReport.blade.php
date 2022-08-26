@@ -6,7 +6,8 @@
         <div class="container">
             <div class="d-flex justify-content-between mb-5">
                 <h2 class="mt-3">Report For {{$employers->name}}</h2>
-                <a href="{{url('/teamleader/employer')}}" class=" text-decoration-none mt-3"><h4 style="color: black">Back</h4>
+                <a href="{{url('/teamleader/employer')}}" class=" text-decoration-none mt-3"><h4 style="color: black">
+                        Back</h4>
                 </a>
             </div>
 

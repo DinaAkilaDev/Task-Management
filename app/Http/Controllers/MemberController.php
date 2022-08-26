@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Models\EmployeeProject;
 use App\Models\Project;
 use App\Models\Task;
 use App\Models\User;
@@ -15,15 +16,13 @@ class MemberController extends Controller
 {
     public function index()
     {
-        $projects = Project::all();
-//        $projects = Project::where('team_leader_id', Auth::user()->Employee->id)->get();
+        $projects = EmployeeProject::where('employee_id',Auth::user()->Employee->id)->get();
         return view('member.dashboard', compact('projects'));
     }
 
     public function project()
     {
-//        $projects = Project::where('team_leader_id', Auth::user()->Employee->id)->get();
-        $projects = Project::all();
+        $projects = EmployeeProject::where('employee_id',Auth::user()->Employee->id)->get();
         return view('member.project', compact('projects'));
     }
 
@@ -91,6 +90,14 @@ class MemberController extends Controller
     public function profile()
     {
         return view('member.editProfile');
+    }
+
+    public function relatedTask($id)
+    {
+        $project=Project::findorfail($id);
+        $tasks=Task::where('project_id',$id)->where('employee_id',Auth::user()->Employee->id)->get();
+        $employer=Auth::user()->name;
+        return view('member.relatedTask' ,compact('project','employer','tasks'));
     }
 
     public function updateProfile(Request $request)

@@ -16,15 +16,16 @@
                             <div class="card-body">
                                 <div style="padding: 20px;">
                                     <h4 class="mb-3">{{$project->title}}
-{{--                                        <span class="m-lg-3"--}}
-{{--                                                                               style="color:{{ $project->status=='progress' ?   'orange' : ($project->status=='canceled' ? 'red' : 'green') }}">{{$project->status}}</span>--}}
+                                        {{--                                        <span class="m-lg-3"--}}
+                                        {{--                                                                               style="color:{{ $project->status=='progress' ?   'orange' : ($project->status=='canceled' ? 'red' : 'green') }}">{{$project->status}}</span>--}}
                                     </h4>
                                     <p class="text-secondary mb-4">{{$project->description}}
                                     </p>
                                 </div>
                                 <div class="mx-4 mb-4 ">
 
-                                    <a href="{{url('/teamleader/add-task')}}"  class="btn btn btn-outline-success ">Add Tasks +</a>
+                                    <a href="{{url('/teamleader/add-task')}}" class="btn btn btn-outline-success ">Add
+                                        Tasks +</a>
 
 
                                 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Models\EmployeeProject;
 use App\Models\Project;
 use App\Models\Task;
 use App\Models\User;
@@ -151,7 +152,8 @@ class AdminController extends Controller
     public function createProject()
     {
         $teamLeader=Employee::where('role','team_leader')->get();
-        return view('admin.addProject',compact('teamLeader'));
+        $employees=Employee::where('role','member')->get();
+        return view('admin.addProject',compact('teamLeader','employees'));
     }
     public function storeProject(Request $request)
     {
@@ -161,6 +163,14 @@ class AdminController extends Controller
         $project->team_leader_id = request('team_leader_id');
         $project->status = request('status');
         $project->save();
+
+        for ($x = 0; $x < count(request('employee_id')); $x++) {
+            $projectemployees = new EmployeeProject();
+            $projectemployees->project_id  = $project->id;
+            $projectemployees->employee_id  =request('employee_id')[$x];
+            $projectemployees->save();
+        }
+
         return back()->with('success','Added Successfully!');
 
     }
@@ -180,7 +190,8 @@ class AdminController extends Controller
     {
         $project = Project::withTrashed()->findOrFail($id);
         $teamLeader=Employee::where('role','team_leader')->get();
-        return view('admin.editProject')->with(compact('project', 'teamLeader'));
+        $employees=Employee::where('role','member')->get();
+        return view('admin.editProject')->with(compact('project', 'teamLeader','employees'));
     }
 
 
@@ -193,6 +204,14 @@ class AdminController extends Controller
         $project->team_leader_id = request('team_leader_id');
         $project->status = request('status');
         $project->save();
+
+        for ($x = 0; $x < count(request('employee_id')); $x++) {
+            $projectemployees = new EmployeeProject();
+            $projectemployees->project_id  = $project->id;
+            $projectemployees->employee_id  =request('employee_id')[$x];
+            $projectemployees->save();
+        }
+
         return back()->with('success', 'Updated Successfully!');
     }
 

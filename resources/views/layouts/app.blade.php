@@ -12,7 +12,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    @include('layouts.css')
+@include('layouts.css')
 <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -56,7 +56,8 @@
                         </ul>
 
                 </div>
-                <img src="{{'/storage/'. Auth::user()->photo}}" alt="" style="width: 40px ; height: 40px; margin-right: 15px;">
+                <img src="{{'/storage/'. Auth::user()->photo}}" alt=""
+                     style="width: 40px ; height: 40px; margin-right: 15px;">
                 @endguest
             </div>
         </nav>

@@ -56,7 +56,8 @@
                         </ul>
 
                 </div>
-                <img src="{{'/storage/'. Auth::user()->photo}}" alt="" style="width: 40px ; height: 40px; margin-right: 15px;">
+                <img src="{{'/storage/'. Auth::user()->photo}}" alt=""
+                     style="width: 40px ; height: 40px; margin-right: 15px;">
                 @endguest
             </div>
         </nav>

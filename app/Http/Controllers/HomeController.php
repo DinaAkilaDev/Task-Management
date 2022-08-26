@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EmployeeProject;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -32,8 +33,8 @@ class HomeController extends Controller
         else{
 //            dd(Auth::user()->Employee->Project);
             if (Auth::user()->Employee->role == 'member'){
-//                $projects=Project::where('team_leader_id',Auth::user()->Employee->Projectleader->id);
-                return view('member.dashboard');
+                $projects = EmployeeProject::where('employee_id',Auth::user()->Employee->id)->get();
+                return view('member.dashboard',compact('projects'));
             }else{
                 $projects=Project::where('team_leader_id',Auth::user()->Employee->id)->get();
                 return view('teamleader.dashboard',compact('projects'));
